@@ -2,7 +2,8 @@
     "version": "0.1",
     "dumper" : {
         "data_url" : "https://raw.githubusercontent.com/sirloon/masterlocks/master/pins.csv",
-        "uncompress" : false
+        "uncompress" : false,
+        "class" : "biothings.hub.dataload.dumper.HTTPDumper"
     },
     "uploader" : {
         "parser" : "parser:load_data",
