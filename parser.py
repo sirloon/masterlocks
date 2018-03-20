@@ -6,10 +6,18 @@ def load_data(data_folder):
     assert os.path.exists(pinsfile)
     r = csv.reader(open(pinsfile,"r").readlines()[1:],delimiter='\t')
     for l in r:
-        d = {"_id":l[0],"pins_num":l[1]}
+        d = {"_id":l[0]}
+        try:
+            d["pins_num"] = int(l[1])
+        except ValueError:
+            d["pins_num"] = 0
         if len(l) == 3:
-            d["has_security_pins"] = (l[2] =="yes" and True) or \
-                                     (l[2] == "no" and False) or None
+            val = None
+            if l[2] =="yes":
+                val = True
+            elif l[2] =="no":
+                val = False
+            d["has_security_pins"] = val
         yield d
 
 
