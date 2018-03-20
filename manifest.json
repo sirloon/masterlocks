@@ -1,0 +1,11 @@
+{
+    "version": "0.1",
+    "dumper" : {
+        "data_url" : "https://raw.githubusercontent.com/sirloon/masterlocks/master/pins.csv",
+        "uncompress" : false
+    },
+    "uploader" : {
+        "parser" : "parser:load_data",
+        "ignore_duplicates" : false
+    }
+}
