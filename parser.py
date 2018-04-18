@@ -6,7 +6,7 @@ def load_data(data_folder):
     assert os.path.exists(pinsfile)
     r = csv.reader(open(pinsfile,"r").readlines()[1:],delimiter='\t')
     for l in r:
-        d = {"_id":l[0]}
+        d = {"_id":l[0], "model" : l[0]}
         try:
             d["pins_num"] = int(l[1])
         except ValueError:
