@@ -12,12 +12,8 @@ def load_data(data_folder):
         except ValueError:
             d["pins_num"] = 0
         if len(l) == 3:
-            val = None
-            if l[2] =="yes":
-                val = True
-            elif l[2] =="no":
-                val = False
-            d["has_security_pins"] = val
+            d["has_security_pins"] = (l[2] =="yes" and True) or \
+                    (l[2] == "no" and False) or "n.a"
         yield d
 
 
